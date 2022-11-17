@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<title>Todo App</title>
+<link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+<body>
+<div class="todo-container">
+<h2>To-Do App</h2>
+<div class="todo">
+
+<div><form action="/" method="POST" class="todo-header">
+<input type="text" name="content">
+<button type="submit">add</button>
+</form></div>
+
+<ul class="todo-list">
+    <% todoTasks.forEach(details => { %>
+    <li class="todo-list-item">
+    <div class="todo-list-item-name"><input type = "checkbox"> <%= details.content %></div>
+    <a href="/remove/<%= details._id %>" class="remove">delete
+    </a>
+    </li>
+    <% }) %>
+    </ul>
+</div>
+</div>
+</body>
